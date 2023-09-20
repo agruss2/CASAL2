@@ -30,6 +30,7 @@
 #include "../Selectivities/Common/CompoundAll.h"
 #include "../Selectivities/Common/DoubleNormalPlateau.h"
 #include "../Selectivities/Common/DoubleNormalSS3.h"
+#include "../Selectivities/Common/HockeyStick.h"
 #include "../Selectivities/Common/Increasing.h"
 #include "../Selectivities/Common/InverseLogistic.h"
 #include "../Selectivities/Common/KnifeEdge.h"
@@ -81,6 +82,8 @@ Selectivity* Factory::Create(shared_ptr<Model> model, const string& object_type,
       result = new InverseLogistic(model);
     else if (sub_type == PARAM_KNIFE_EDGE)
       result = new KnifeEdge(model);
+    else if (sub_type == PARAM_HOCKEYSTICK)
+      result = new HockeyStick(model);
     else if (sub_type == PARAM_LOGISTIC)
       result = new Logistic(model);
     else if (sub_type == PARAM_LOGISTIC_PRODUCING)
